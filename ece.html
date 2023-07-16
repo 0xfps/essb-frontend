@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .c {
+            width: 75%;
+        }
+    </style>
+    <title>ChatBot</title>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="bg-gray-100 border-b border-gray-200 px-4 py-2.5 sticky top-0 z-50">
+        <div class="flex flex-wrap justify-between items-center">
+            <div class="flex justify-start items-center">
+                <a href="#" class="flex items-center justify-between mr-4 gap-x-2">
+                    <img class="w-8 h-8 rounded-full"
+                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png"
+                        alt="user photo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap">ECE ChatBOT</span>
+                </a>
+            </div>
+            <div class="flex items-center lg:order-2">
+                <a href="#"
+                    class="p-2 mr-1 text-black rounded-lg hover:text-gray-700 hover:bg-gray-100 focus:ring-4 focus:ring-gray-300">
+                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="text-sm h-fit m-8 rounded-lg p-8 grid grid-cols-1 space-y-3 bg-white">
+            <div class="text-sm h-fit m-8 rounded-lg p-8 grid grid-cols-1 space-y-3 bg-white" id="chatarea">
+                <div>
+                    <p class="bg-gray-100 px-2 py-4 w-fit rounded-lg c">Hello</p>
+                </div>
+                <div>
+                    <p class="bg-gray-100 px-2 py-4 w-fit rounded-lg c">I'm ECE Bot, Who are you?</p>
+                </div>
+                <div>
+                    <p class="bg-green-100 px-2 py-4 w-fit rounded-lg float-right c">I'm David, What do yo do?</p>
+                </div>
+                <div>
+                    <p class="bg-gray-100 px-2 py-4 w-fit rounded-lg c">I'm what they call IDAN</p>
+                </div>
+                <div>
+                    <p class="bg-green-100 px-2 py-4 w-fit rounded-lg float-right c">Okay</p>
+                </div>
+            </div>
+            <div class="w-full pt-24 flex justify-between gap-x-2">
+                <textarea class="flex-grow py-2 px-4 rounded-full border border-gray-300 bg-gray-200 resize-none"
+                    rows="1" placeholder="Type a Message..." id="chat"></textarea>
+                <button class="bg-green-400 rounded-full" style="outline: none;"
+                    onclick="chat(document.getElementById('chat').value)">
+                    <svg class="svg-inline--fa text-white fa-paper-plane fa-w-8 w-8 h-8 mr-1 p-2" aria-hidden="true"
+                        focusable="false" data-prefix="fas" data-icon="paper-plane" role="img"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                            d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
