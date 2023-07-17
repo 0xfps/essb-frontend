@@ -31,13 +31,13 @@ const createTextBubble = (direction, content) => {
     const p = document.createElement("p")
 
     let elementClass = ""
-    if (direction == "left") elementClass = "bg-gray-100 px-2 py-4 w-fit rounded-lg float-left"
-    else elementClass = "bg-green-100 px-2 py-4 w-fit rounded-lg float-right"
+    if (direction == "left") {
+        elementClass = "bg-gray-100 px-2 py-4 w-fit rounded-lg float-left"
 
-    if ((screen.width >= "1000px") && (direction == "left")) p.setAttribute("style", "width: 50%;")
-    if (((screen.width >= "500px") && (screen.width < 1000)) && (direction == "left"))
-        p.setAttribute("style", "width: 85%;")
-    else p.setAttribute("style", "width: 100%;")
+        if (screen.width < "500px") p.setAttribute("style", "width: 100%;")
+        else if ((screen.width >= "500px") && ((screen.width < "1000px"))) p.setAttribute("style", "width: 85%;")
+        else p.setAttribute("style", "width: 50%;")
+    } else elementClass = "bg-green-100 px-2 py-4 w-fit rounded-lg float-right"
 
     p.setAttribute("class", elementClass)
     p.innerHTML = cut(content)
